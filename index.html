@@ -3,40 +3,117 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IT-PRODEV — Cosmic Bash</title>
-<meta name="description" content="IT-PRODEV: estudio desarrollador de Cosmic Bash, el party game espacial para toda la familia.">
+<title>Cosmic Bash — IT-PRODEV</title>
+<meta name="description" content="Cosmic Bash: minijuegos multijugador para toda la familia. 1 a 4 jugadores en un mismo dispositivo. Un juego de IT-PRODEV.">
 <style>
-  :root{--fondo:#120A2A;--panel:#1d1140;--borde:#6a5acd55;--texto:#f2effc;--sub:#bfb3e8;--acento:#FFD54F}
-  *{box-sizing:border-box}
-  body{font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;min-height:100vh;
-       background:radial-gradient(1200px 600px at 70% -10%, #2a1a5e 0%, var(--fondo) 55%);
-       color:var(--texto);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
-  main{max-width:640px;width:100%;background:var(--panel);border:1px solid var(--borde);
-       border-radius:24px;padding:40px 32px;text-align:center;box-shadow:0 20px 60px #0006}
-  h1{margin:0 0 4px;font-size:2rem;letter-spacing:.5px}
-  .estudio{color:var(--sub);margin:0 0 24px;font-size:.95rem;text-transform:uppercase;letter-spacing:2px}
-  p{line-height:1.6;color:var(--sub)}
-  .links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
-  .links a{display:inline-block;padding:12px 20px;border-radius:14px;text-decoration:none;
-       color:var(--texto);background:#2a1a5e;border:1px solid var(--borde);font-weight:600}
-  .links a:hover{background:#37246f}
-  .contacto{margin-top:28px;font-size:.9rem;color:var(--sub)}
-  .contacto a{color:var(--acento);text-decoration:none}
-  footer{margin-top:20px;font-size:.8rem;color:#8f83bb}
+  :root{
+    --fondo:#0d0722; --panel:#170d38; --borde:#4a3a8a;
+    --texto:#f2effc; --sub:#b8abdf; --acento:#FFD54F;
+    --azul:#3FA9F5; --rojo:#E5566B; --verde:#2F9E44; --amarillo:#F5B301;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{font-family:system-ui,"Segoe UI",Roboto,Arial,sans-serif;background:var(--fondo);color:var(--texto)}
+  img{max-width:100%;display:block}
+
+  /* ── Hero ── */
+  .hero{position:relative;overflow:hidden;text-align:center;padding:72px 20px 0;
+        background:url("img/fondo.jpg") center/cover no-repeat}
+  .hero::before{content:"";position:absolute;inset:0;
+        background:linear-gradient(180deg,#0d072266 0%,#0d0722cc 62%,var(--fondo) 100%)}
+  .hero>*{position:relative}
+  .icono{width:104px;height:104px;border-radius:24px;margin:0 auto 18px;
+        box-shadow:0 10px 34px #000a;border:2px solid #ffffff22}
+  h1{font-size:clamp(2.4rem,7vw,4rem);letter-spacing:3px;text-shadow:0 4px 24px #000c}
+  .lema{font-size:clamp(1rem,2.6vw,1.25rem);color:var(--sub);margin:10px auto 22px;max-width:560px}
+  .badge{display:inline-block;background:var(--acento);color:#241a05;font-weight:700;
+        padding:10px 22px;border-radius:999px;font-size:.95rem}
+  .personajes{display:flex;justify-content:center;align-items:flex-end;gap:0;
+        margin-top:26px;max-width:760px;margin-left:auto;margin-right:auto}
+  .personajes img{width:24%;max-width:170px;filter:drop-shadow(0 12px 18px #0009)}
+  .personajes img:nth-child(1){transform:translateY(6px) rotate(-3deg)}
+  .personajes img:nth-child(2){transform:translateY(-8px)}
+  .personajes img:nth-child(3){transform:translateY(4px) rotate(2deg)}
+  .personajes img:nth-child(4){transform:translateY(-4px) rotate(-2deg)}
+
+  /* ── Secciones ── */
+  section{max-width:960px;margin:0 auto;padding:56px 20px}
+  h2{font-size:1.5rem;margin-bottom:24px;text-align:center;letter-spacing:1px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+  .card{background:var(--panel);border:1px solid var(--borde);border-radius:18px;padding:22px}
+  .card h3{font-size:1.05rem;margin-bottom:8px}
+  .card p{color:var(--sub);font-size:.92rem;line-height:1.55}
+  .card.b1{border-top:4px solid var(--azul)}
+  .card.b2{border-top:4px solid var(--rojo)}
+  .card.b3{border-top:4px solid var(--verde)}
+  .card.b4{border-top:4px solid var(--amarillo)}
+
+  .estudio{text-align:center;color:var(--sub);line-height:1.7;max-width:640px;margin:0 auto}
+  .estudio strong{color:var(--texto)}
+
+  footer{border-top:1px solid var(--borde);padding:30px 20px 40px;text-align:center;
+        color:var(--sub);font-size:.9rem}
+  footer nav{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-bottom:14px}
+  footer a{color:var(--acento);text-decoration:none}
+  footer a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
-<main>
-  <h1>Cosmic Bash</h1>
-  <p class="estudio">IT-PRODEV</p>
-  <p>Party game espacial para toda la familia: minijuegos rápidos y caóticos
-  para 1 a 4 jugadores en un mismo dispositivo. Disponible próximamente en Google Play.</p>
-  <div class="links">
+
+<header class="hero">
+  <img class="icono" src="img/icon.png" alt="Ícono de Cosmic Bash">
+  <h1>COSMIC BASH</h1>
+  <p class="lema">Minijuegos rápidos y caóticos para 1 a 4 jugadores
+  en un mismo dispositivo. Diversión espacial para toda la familia.</p>
+  <span class="badge">Muy pronto en Google Play</span>
+  <div class="personajes">
+    <img src="img/clashy_rojo.png" alt="Nova">
+    <img src="img/clashy_azul.png" alt="Clashy">
+    <img src="img/clashy_verde.png" alt="Iris">
+    <img src="img/clashy_amarillo.png" alt="Aura">
+  </div>
+</header>
+
+<section>
+  <h2>El party game del espacio</h2>
+  <div class="grid">
+    <div class="card b1">
+      <h3>20 minijuegos</h3>
+      <p>Duelos, carreras, reflejos y pura locura cósmica. Partidas de menos
+      de un minuto: fácil de aprender, difícil de soltar.</p>
+    </div>
+    <div class="card b2">
+      <h3>1 a 4 jugadores</h3>
+      <p>Todos en la misma pantalla, cada uno en su esquina. El sofá vuelve
+      a ser la mejor arena de juego.</p>
+    </div>
+    <div class="card b3">
+      <h3>Modo Trofeo</h3>
+      <p>Torneos por rondas con tabla de posiciones para coronar al campeón
+      de la casa.</p>
+    </div>
+    <div class="card b4">
+      <h3>Para toda la familia</h3>
+      <p>Diseñado para niños y grandes por igual, con contenido apto para
+      todas las edades.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Sobre el estudio</h2>
+  <p class="estudio"><strong>IT-PRODEV</strong> es un estudio independiente de
+  Guayaquil, Ecuador. Cosmic Bash es nuestro primer juego: nació de las tardes
+  de juegos en familia y está hecho para compartir el teléfono, no para mirarlo solo.</p>
+</section>
+
+<footer>
+  <nav>
     <a href="privacidad.html">Política de Privacidad</a>
     <a href="privacy-en.html">Privacy Policy (English)</a>
-  </div>
-  <p class="contacto">Contacto: <a href="mailto:itpro.devs@gmail.com">itpro.devs@gmail.com</a></p>
-</main>
-<footer>© 2026 IT-PRODEV · Guayaquil, Ecuador</footer>
+    <a href="mailto:itpro.devs@gmail.com">itpro.devs@gmail.com</a>
+  </nav>
+  © 2026 IT-PRODEV · Guayaquil, Ecuador
+</footer>
+
 </body>
 </html>
